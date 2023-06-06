@@ -1,3 +1,6 @@
+import java.util.List;
+import java.util.ArrayList;
+
 public class Stack<T>{
     private Node<T> head;
     private int size;
@@ -22,7 +25,7 @@ public class Stack<T>{
 
     public T pop() throws Exception{
         if (size == 0) {
-            throw new Exception("Algo deu errado!");
+            throw new Exception("Não há nada na pilha");
         } 
         else {
             T value = head.getValue();
@@ -31,6 +34,25 @@ public class Stack<T>{
 
             return value;
         }
+    }
+
+    public List<T> popUp() throws Exception{
+        List<T> valores = new ArrayList<>();
+
+        while(!isEmpty()) {
+            if(size == 1) {
+                T value = head.getValue();
+                head = null;
+                valores.add(value);
+                size--;
+            } else {
+                T value = head.getValue();
+                head = head.getNext();
+                valores.add(value);
+                size--;
+            }
+        }
+        return valores;
     }
 
     public int size() {
