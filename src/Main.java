@@ -9,7 +9,7 @@ public class Main {
         for(int i = 0; i < 10; i++) {
             int numeroAleatorio = random.nextInt(4);
             Patient exemplo = new Patient("Zé", i, numeroAleatorio);
-
+            
             pacientes.addPacientesFila(exemplo);
         }
 

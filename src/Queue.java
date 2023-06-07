@@ -34,9 +34,9 @@ public class Queue<T> {
         }
     }
 
-    public T dequeue() throws Exception{
+    public T dequeue() {
         if (isEmpty()) {
-            throw new Exception("Não há pacientes nessa fila.");
+            return null;
         }
         else {
             T value = head.getValue();

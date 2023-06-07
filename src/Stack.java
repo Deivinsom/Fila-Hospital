@@ -23,9 +23,9 @@ public class Stack<T>{
         size++;
     }
 
-    public T pop() throws Exception{
+    public T pop() {
         if (size == 0) {
-            throw new Exception("Não há nada na pilha");
+            return null;
         } 
         else {
             T value = head.getValue();
